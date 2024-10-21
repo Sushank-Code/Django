@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    overflow: hidden;
+}
+body{
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../img/back6.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; 
+} 
+.login{
+    padding: 35px 0px 0px 40px;
+    width: 380px;
+    height: 450px;
+    background: transparent;
+    border: 2px solid silver;
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+}
+.login h1{
+    position: relative;
+    color: red;
+    font-size: 2.5em;
+}
+.input_box{
+    position: relative;
+    border-bottom: 2px solid white;
+    margin: 30px 0px;
+    width: 300px;
+}
+.input_box label{
+    position: absolute;
+    left: 5px;
+    top: 65%;
+    transform: translatey(-50%);
+    pointer-events: none;
+    font-size: 1.2em;
+    color: white;
+    transition: 0.5s;
+}
+input:focus ~ label,
+input:valid ~ label{
+    top: 7.5px;
+}
+.input_box input{
+    width: 100%;
+    height: 40px;
+    /* padding: 0px 30px 0px 30px; */
+    background: transparent;
+    font-size: 16px;
+    border: none;
+    outline: none;
+}
+.input_box ion-icon{
+    position: relative;
+    left: 275px;
+    top: 30px;
+    font-size: 1.2em;
+    color: white;
+}
+.forget{
+    position: relative;
+    top: -15px;
+    margin: 35px 0px 0px 0px;
+    font-size: 1.1em;
+}
+.forget a{
+    position: relative;
+    margin-left: 50px;
+    color: skyblue;
+    
+}
+.forget a:hover{
+    text-decoration: underline;
+}
+span input{
+    width: 90%;
+    height: 45px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    margin-top:7px ;
+    font-size: 1.2em;
+    cursor: pointer;
+    font-weight: bold;
+}
+.register{
+    text-align: center;
+    margin: 20px 0px 0px -50px;
+    font-size: 1.1em;
+    color: black;
+}
+.register a:hover{
+ text-decoration: underline;
+}
+.register a{
+    color: skyblue;
+}
+span input:hover{
+    background-color: silver;
+}
