@@ -1,5 +1,5 @@
 """
-URL configuration for tut project.
+URL configuration for tut2_project project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.1/topics/http/urls/
@@ -17,13 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 
-# For changing admin Panel
-admin.site.site_header = "Sushank Login"
-admin.site.site_title = "Sushank "
-admin.site.index_title = "Welcome to admin Portal"
-
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('home.urls'))
+    path('',include('tut2_app.urls')),
+    path('tut2_app2/',include('tut2_app2.urls')),
 ]
-
