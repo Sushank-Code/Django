@@ -26,3 +26,5 @@ def index(request):
     # return render(request,'app/index.html',context={'Name': 'Django2.0'}) # 3rd approach
     return render(request,'app/index.html',context)
     
+def contact(request):
+    return render(request,'app/contact.html')
