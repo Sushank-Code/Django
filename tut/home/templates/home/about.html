@@ -1,0 +1,22 @@
+{% extends "home/base.html" %}
+
+{% block title %} About {% endblock title %}
+
+{% block body %} 
+
+<h1> ABOUT Page</h1>
+{{ contact_data}}
+
+{% comment %} {% for i in contact_data %}
+    {% if forloop.counter == 1 %}
+    <p>{{ i.name }}</p>
+    <p>{{ i.email }}</p>
+    {% endif %}
+{% endfor %} {% endcomment %}
+{% comment %} <p>{{ contact_data2.name }}</p> {% endcomment %}
+
+{% for i in contact_data|slice:'0:2'%}
+<p>{{ i.name|upper }}</p>
+{% endfor %}
+
+{% endblock body %}

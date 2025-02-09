@@ -18,7 +18,6 @@ def index(request):
     card ={
         'cardname1' : 'Ecommerse',
         'cardname2' : 'Blog',
-        'cardname3' : 'Video',
     }
     context = {'course': course, 'card': card}       # 2 dictionary or more
     # return render(request,'app/index.html',context=course) # 1st approach

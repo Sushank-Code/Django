@@ -1,10 +1,10 @@
-{% extends "base.html" %}
-
+{% extends "home/base.html" %}
+{% load static %}
 {% block title %} Contact {% endblock title %}
 
 {% block body %}
 <div class="container">
-<img src="static/Contact.jpg " width="50" height="50"  style="position: relative; left: 680px;top: 65px;">
+<img src="{% static 'home/img/contact.jpg' %}" width="50" height="50"  style="position: relative; left: 680px;top: 65px;">
 <h1 class="text-center my-3">Contact US</h1>
 <form method="post" action="/contact">
     {% csrf_token %}
@@ -27,4 +27,5 @@
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 </div>
+
 {% endblock body %}
