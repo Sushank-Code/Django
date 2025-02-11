@@ -15,7 +15,7 @@
 {% endfor %} {% endcomment %}
 {% comment %} <p>{{ contact_data2.name }}</p> {% endcomment %}
 
-{% for i in contact_data|slice:'0:2'%}
+{% for i in contact_data|slice:'0:2' reversed%}
 <p>{{ i.name|upper }}</p>
 {% endfor %}
 

@@ -6,7 +6,7 @@
 <div class="container">
 <img src="{% static 'home/img/contact.jpg' %}" width="50" height="50"  style="position: relative; left: 680px;top: 65px;">
 <h1 class="text-center my-3">Contact US</h1>
-<form method="post" action="/contact">
+<form method="post" action="{% url 'contact' %}">
     {% csrf_token %}
     <div class="mb-3">
         <label for="name" class="form-label">Name</label>
