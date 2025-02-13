@@ -17,8 +17,8 @@
    <h2> Login using for loop</h2>
 <form action="">
    {% for field in login %}
-   <label for="{{field.id_for_label}}}">{{field.label}}:</label>
-   {{field}}
+   <label for="{{field.id_for_label}}">{{field.label}}:</label>
+   {{field }}
    {% endfor %}
 </form>
 {% endblock body %}

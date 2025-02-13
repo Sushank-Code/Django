@@ -14,3 +14,8 @@ class Contact(models.Model):
 class student(models.Model):
     name =models.CharField(max_length=122)
     age = models.IntegerField()
+
+class Login(models.Model):
+    name = models.CharField(max_length=120)
+    email = models.EmailField(unique=True)
+    password = models.CharField(max_length=120)

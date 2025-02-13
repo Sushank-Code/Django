@@ -1,0 +1,16 @@
+{% extends "home/base.html" %}
+{% load static %}
+{% block title %} Login {% endblock title %} 
+
+{% block body %}
+    <h1> Login to My Webiste</h1>
+    <form action="{% url "login" %}" method="post" novalidate>
+        {% csrf_token %}
+        {% for field in login %}
+        <label for="{{field.id_for_label}}">{{field.label}}:</label>
+        {{field }}
+        {{ field.errors }}
+        {% endfor %}
+        <input type="submit" value="submit">
+     </form>
+{% endblock body %}

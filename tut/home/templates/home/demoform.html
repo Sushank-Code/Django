@@ -1,0 +1,18 @@
+{% extends "home/base.html" %}
+{% load static %}
+{% block title %} DemoForm {% endblock title %} 
+
+{% block body %}
+<h1> Demo Form</h1>
+<form action="">
+    {% for field in demoform %}
+
+    <label for="{{field.id_for_label}}">{{field.label}}:</label>
+    {% comment %} <input type="{{ field.field.widget.input_type }}" name="{{ field.name }}" required id="{{field.id_for_label}}" placeholder="{{ field.field.widget.attrs.placeholder }}"> {% endcomment %}
+    {{field}}
+   
+    {% endfor %}
+    <input type="submit" value="Submit">
+
+</form>
+{% endblock body %}
