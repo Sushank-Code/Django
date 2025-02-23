@@ -1,5 +1,5 @@
 from django.contrib import admin
-from home.models import Contact,student,Login
+from home.models import Contact,student,Login,Contact2
 
 # Register your models here.
 
@@ -19,3 +19,7 @@ class studentAdmin(admin.ModelAdmin):
 @admin.register(Login)
 class LoginAdmin(admin.ModelAdmin):
     list_display = ('id','name','email','password')
+
+@admin.register(Contact2)
+class Contact2Admin(admin.ModelAdmin):
+    list_display = ('id','name','email')

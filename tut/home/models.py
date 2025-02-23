@@ -9,7 +9,7 @@ class Contact(models.Model):
     date = models.DateField()
 
     # def __str__(self):
-    #     return self.name 
+    #     return self.name   
 
 class student(models.Model):
     name =models.CharField(max_length=122)
@@ -19,3 +19,8 @@ class Login(models.Model):
     name = models.CharField(max_length=120)
     email = models.EmailField(unique=True)
     password = models.CharField(max_length=120)
+
+class Contact2(models.Model):
+    name =models.CharField(max_length=122)
+    email =models.CharField(max_length=122)
+    desc = models.TextField()

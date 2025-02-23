@@ -1,8 +1,8 @@
 from django.shortcuts import render,HttpResponse,redirect
+from home.forms import Registration,Loginf,DemoForm,SignForm,ModelContact2
+from home.models import Contact,Login,Contact2
 from datetime import datetime
 from django.contrib import messages
-from home.models import Contact,Login   
-from home.forms import Registration,Loginf,DemoForm
 
 # Create your views here.
 def index(request):
@@ -11,14 +11,14 @@ def index(request):
 
 def about(request):
     contact_data = Contact.objects.all()
-    contact_data2 = Contact.objects.first()    # For single data (single Object)
-    context ={
+    contact_data2 = Contact.objects.first()     # For single data (single Object)
+    context = {
         'contact_data' : contact_data,
         'contact_data2' : contact_data2,
     }
     return render(request,'home/about.html',context) 
 
-def contact(request):                     # Yo Html Form ho Django ko form hoina
+def contact(request):                     # Yo custom Html Form ho Django ko form hoina
     if(request.method == "POST"):
         name=request.POST.get('name')
         email=request.POST.get('email')  
@@ -28,7 +28,7 @@ def contact(request):                     # Yo Html Form ho Django ko form hoina
         contact.save()
         messages.success(request, "Your message has been sent ! ")
     return render(request,'home/contact.html') 
-
+ 
 def registration(request):
     fm = Registration()
     fm2 = Loginf()
@@ -49,7 +49,6 @@ def registration(request):
 
 def demoform(request):
     demoform = DemoForm()
-    
     return render(request,'home/demoform.html',{'demoform':demoform})   
 
 def login(request):            
@@ -63,5 +62,25 @@ def login(request):
             user.save()
             return redirect('/login/')
     else:
-        login = Loginf()          # for get request
+        login = Loginf()                                  # for get request
     return render(request,'home/login.html',{'login':login})     
+
+def ModelForm(request):
+    if(request.method == "POST"):                       # for post request 
+        mf = SignForm(request.POST)    
+        if mf.is_valid():
+            mf.save()
+            return redirect('/modelform/')
+    else:
+        mf = SignForm()                                  # for get request
+    return render(request,'home/modelform.html',{'modelform': mf})     
+
+def ModelContact(request):
+    if(request.method == "POST"):                   
+        cf2 = ModelContact2(request.POST)    
+        if cf2.is_valid():
+            cf2.save()
+            return redirect('/modelcontact/')
+    else:
+        cf2 = ModelContact2()
+    return render(request,'home/modelcontact.html',{'contact2':cf2})     
