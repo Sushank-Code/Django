@@ -40,6 +40,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="{% url "modelcontact" %}">ModelContact</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url "messages" %}">MessageFramework</a>
+              </li>
             </ul>
             <form class="d-flex" role="search">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -50,13 +53,13 @@
     </nav>
     
   {% if messages %}
-  {% for message in messages %}
+    {% for message in messages %}
     <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
       {{ message }}
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     {% endfor %}
-    {% endif %}
+  {% endif %}
     {% block body %} {% endblock body %}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     {% block js %}{% endblock js %}

@@ -12,4 +12,5 @@ urlpatterns = [
     path("demoform/",views.demoform,name='demoform'),
     path("modelform/",views.ModelForm,name='modelform'),
     path("modelcontact/",views.ModelContact,name='modelcontact'),
+    path("messages/",views.Msgframework,name='messages'),
 ]

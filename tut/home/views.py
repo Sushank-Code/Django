@@ -84,3 +84,11 @@ def ModelContact(request):
     else:
         cf2 = ModelContact2()
     return render(request,'home/modelcontact.html',{'contact2':cf2})     
+
+def Msgframework(request):
+    # messages.add_message(request,messages.SUCCESS,"Your message")
+
+    messages.success(request,"Sucess Message")
+    messages.warning(request,"Warning message")
+    messages.error(request,"Error Message")
+    return render(request,'home/msg.html')      
