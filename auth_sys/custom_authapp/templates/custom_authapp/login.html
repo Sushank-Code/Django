@@ -1,0 +1,38 @@
+{% extends "custom_authapp/base.html" %}
+{% load static %}
+
+{% block title %} Login {% endblock title %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'custom_authapp/css/sign.css' %}">
+{% endblock css %}
+
+{% block content %}
+
+<div class="login">
+    <h1>Login</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="user">
+            <label for="user">
+                <input type="email" placeholder="Email" name="log" id="user" required>
+            </label>
+        </div>
+        <div class="user">
+            <label for="pass">
+                <input type="password" placeholder="Password" name="log" id="pass" required>
+            </label>
+        </div>
+        <div class="forget"> 
+            <a href="{% url "Passwordreset" %}" class="text-decoration-none">Forget Password?
+            </a>
+        </div>
+        <div class="log"><button type="submit">Login</button></div>
+
+        <div class="sign">
+            Not a member? <a href="{% url "Registration" %}" style="--bs-link-hover-color-rgb: 255, 0, 0;"> signup </a>
+        </div>
+    </form>
+</div>
+
+{% endblock content %}

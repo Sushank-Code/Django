@@ -1,0 +1,12 @@
+{% extends "custom_authapp/base.html" %}
+
+{% block title %} Customer DashBoard {% endblock title %}
+
+{% block content %}
+<h1 class="text-center"> Customer Dash </h1>
+<div>
+    <a href="{% url "Passchange" %}" class="btn btn-primary">
+      Change Password
+    </a>
+  </div>
+{% endblock content %}

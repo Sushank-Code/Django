@@ -1,0 +1,68 @@
+{% extends "custom_authapp/base.html" %}
+{% load static %}
+
+{% block title %} Registration {% endblock title %}
+
+{% block css %} 
+<link rel="stylesheet" href="{% static 'custom_authapp/css/sign.css' %}">
+{% endblock css %}
+
+{% block content %}
+
+<div class="login mt-5">
+    <h1>Create an account</h1>
+    <form action="" method="post" novalidate>
+        {% csrf_token %}
+        <div class="user">
+            <label for="name">
+            {% if rform.name.errors %}
+                {% for e in rform.name.errors %}
+                    <span class="text-danger"> {{ e }}</span>
+                {% endfor %}
+            {% endif %}
+                <input type="text" value="{{ rform.name.value|default:'' }}" placeholder="Name" name="name" id="name" required>
+            </label>
+        </div>
+        
+        <div class="user">
+            {% if rform.email.errors %}
+                {% for e in rform.email.errors %}
+                    <span class="text-danger"> {{ e }}</span>
+                {% endfor %}
+            {% endif %}
+            <label for="email">
+                <input type="email" value="{{ rform.email.value|default:'' }}" placeholder="Email" name="email" id="email" required>
+            </label>
+        </div>
+        
+        <div class="user">
+            {% if rform.password.errors %}
+                {% for e in rform.password.errors %}
+                    <p class="text-danger"> {{ e }}</p>
+                {% endfor %}
+            {% endif %}
+            <label for="password">
+                <input type="password" placeholder="Password" name="password" id="password" required>
+            </label>
+        </div>
+        
+        <div class="user">
+            {% if rform.confirm_password.errors %}
+                {% for e in rform.confirm_password.errors %}
+                    <p class="text-danger"> {{ e }}</p>
+                {% endfor %}
+            {% endif %}
+            <label for="confirm_password">
+                <input type="password" placeholder=" Confirm Password" name="confirm_password" id="confirm_password" required>
+            </label>
+        </div>
+       
+        <div class="log"><button type="submit">Sign up</button></div>
+
+        <div class="sign">
+            Already have an account? <a href="{% url "Login" %}" style="--bs-link-hover-color-rgb: 255, 0, 0;"> signin </a>
+        </div>
+    </form>
+</div>
+
+{% endblock content %}
