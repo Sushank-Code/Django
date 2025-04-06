@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Session</title>
+</head>
+<body>
+    <h4>Getting Session</h4>
+    {{ all_session }}
+    {% for key ,value  in all_session.items %}
+    <p> {{ key }}: {{value}}</p>
+    {{ request.session.get_expiry_age}}
+    {{ request.session.get_expiry_date}}
+    {{ request.session.get_expire_at_browser_close}}
+    {% endfor %}
+    <p>{{ fid }}</p>
+</body>
+</html>
